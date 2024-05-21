@@ -1,5 +1,11 @@
 import React from "react";
 
 export default function page() {
-  return <div>WELCOME DASHBOAD</div>;
+  return <>
+    <div>
+      <div>
+        
+      </div>
+    </div>
+  </>;
 }
