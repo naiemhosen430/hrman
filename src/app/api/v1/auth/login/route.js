@@ -72,7 +72,7 @@ export async function POST(NextRequest) {
 
     // sending final success response 
     return Response.json({
-      message: "Successfully registered.",
+      message: "Successfully logedin.",
       data: checkUser,
       token,
       statusCode: 200,

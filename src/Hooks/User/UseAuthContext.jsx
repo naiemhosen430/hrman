@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 export default function UseAuthContext() {
   const [loading, setLoading] = useState(false);
   const authContext = useContext(AuthContex);
-  const { dispatch } = authContext;
+  const {dispatch} = useContext(AuthContex);
   const router = useRouter();
 
   if (!authContext) {
