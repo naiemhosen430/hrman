@@ -24,6 +24,7 @@ export default function AuthContexProvider({ children }) {
 
   useEffect(() => {
 
+    if (token) {
     const fetchData = async () => {
       try {
         const response = await getApiCall("auth/me");
@@ -37,7 +38,6 @@ export default function AuthContexProvider({ children }) {
       }
     };
 
-    if (token) {
       fetchData();
     }
   }, [token]);
