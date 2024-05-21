@@ -1,21 +1,13 @@
 "use client";
 import React, { useContext, useEffect, useState } from "react";
 import AddUserBox from "../Components/AddUserBox";
-import UseAuthContext from "@/Hooks/User/UseAuthContext";
-import UseAllUsers from "@/Hooks/User/UseAllUsers";
-import LilSpinner from "@/app/Components/Loaders/LilSpinner";
 import { MdErrorOutline } from "react-icons/md";
 
 
 export default function page() {
-  const [createQuestionBox, setCreateQuestionBox] = useState(false);
-  const {state}=UseAuthContext()
-  const allusers = state.allusers
-  const {getAllUsers, loading, error} = UseAllUsers()
 
-  useEffect(()=>{
-    getAllUsers()
-  },[])
+  const allusers = null
+
 
   if (!allusers) {
     return (
