@@ -13,29 +13,29 @@ export default function DashboardNav() {
   const {state} = useContext(AuthContex);
   const {user} = state
 
-    if (!user) {
-    return (
-      <div className="h-screen hidden w-2/12 bg-slate-900 lg:inline-block p-5">
-        <ul>
-          <Link
-            href={``}
-            className="cursor-pointer loading my-2 block text-slate-400 hover:text-white hover:bg-slate-700 rounded-md font-bold p-4 px-4 w-full"
-          >{" "}</Link>
-          {menuItems.map((item) => (
-            <Link
-              href={``}
-              key={item}
-              className="cursor-pointer loading my-2 block text-slate-400 hover:text-white hover:bg-slate-700 rounded-md font-bold p-4 px-4 w-full"
-            >{" "}</Link>
-          ))}
-          <button
+  //   if (!user) {
+  //   return (
+  //     <div className="h-screen hidden w-2/12 bg-slate-900 lg:inline-block p-5">
+  //       <ul>
+  //         <Link
+  //           href={``}
+  //           className="cursor-pointer loading my-2 block text-slate-400 hover:text-white hover:bg-slate-700 rounded-md font-bold p-4 px-4 w-full"
+  //         >{" "}</Link>
+  //         {menuItems.map((item) => (
+  //           <Link
+  //             href={``}
+  //             key={item}
+  //             className="cursor-pointer loading my-2 block text-slate-400 hover:text-white hover:bg-slate-700 rounded-md font-bold p-4 px-4 w-full"
+  //           >{" "}</Link>
+  //         ))}
+  //         <button
 
-            className="cursor-pointer my-5 bg-slate-800 loading block text-slate-400 hover:text-white hover:bg-slate-700 rounded-md font-bold p-4 px-4 w-full"
-          >{" "}</button>
-        </ul>
-      </div>
-    );
-  }
+  //           className="cursor-pointer my-5 bg-slate-800 loading block text-slate-400 hover:text-white hover:bg-slate-700 rounded-md font-bold p-4 px-4 w-full"
+  //         >{" "}</button>
+  //       </ul>
+  //     </div>
+  //   );
+  // }
 
   const toggleNav = () => {
     setMobileNav((prevNav) => !prevNav);

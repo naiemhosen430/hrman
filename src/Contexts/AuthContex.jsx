@@ -33,7 +33,6 @@ export default function AuthContexProvider({ children }) {
           dispatch({ type: "ADD_AUTHDATA", payload: response?.data || null });
         }
       } catch (error) {
-        console.error("Error fetching data:", error); // Log any error that occurs
         toast.error(error.response?.data?.message || "Something went wrong.");
       }
     };

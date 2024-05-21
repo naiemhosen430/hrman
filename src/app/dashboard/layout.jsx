@@ -13,7 +13,7 @@ export default function DashboardLayout({ children }) {
     <div className="flex justify-center">
 
     <DashboardNav />
-    <div className="lg:w-10/12 lg:p-5 p-2">
+    <div className="lg:w-10/12">
 
         {children}
     </div>
