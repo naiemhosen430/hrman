@@ -28,7 +28,6 @@ export async function GET(request) {
     { status: 200 });
   } catch (error) {
     return Response.json({ message:error?.message }, { status: 498 })
-
   }
 
 
