@@ -1,5 +1,4 @@
 "use client";
-import UseAddUser from "@/Hooks/User/UseAddUser";
 import React, { useContext, useEffect, useState } from "react";
 import { MdErrorOutline } from "react-icons/md";
 
@@ -8,7 +7,6 @@ export default function AddUserBox({
   setCreateQuestionBox,
 }) {
   const [countries, setCountries] = useState([]);
-  const {addUser, loading, error} = UseAddUser()
   const [userInfo, setuserInfo] = useState({
     name: "",
     email: "",
@@ -31,7 +29,6 @@ export default function AddUserBox({
 
 
   const handleAddUser = async () => {
-    addUser(userInfo)
   };
 
   const closeCreateBox = () => {

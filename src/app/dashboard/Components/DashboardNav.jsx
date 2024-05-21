@@ -1,28 +1,19 @@
-"use client";
+"use client"
+
 import Link from "next/link";
 import { useState, useContext } from "react";
 import { MdOpenInFull } from "react-icons/md";
-import Spinner from "@/app/Components/Loaders/Spinner";
+import { FaPlus } from "react-icons/fa6";
+import { menuItems } from "@/data";
 import { AuthContex } from "@/Contexts/AuthContex";
-import UseAuthContext from "@/Hooks/User/UseAuthContext";
-
 
 export default function DashboardNav() {
+  const [mobileNav, setMobileNav] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
   const {state} = useContext(AuthContex);
   const {user} = state
-  const { handleAuth, loading } = UseAuthContext();
 
-  const [mobileNav, setMobileNav] = useState(false);
-  const [menuItems, setMenuItems] = useState([
-    "Profile",
-    "Product list",
-    "User list",
-    "App setting",
-    "Help",
-  ]);
-
-
-  if (!user) {
+    if (!user) {
     return (
       <div className="h-screen hidden w-2/12 bg-slate-900 lg:inline-block p-5">
         <ul>
@@ -46,22 +37,12 @@ export default function DashboardNav() {
     );
   }
 
-  //   onclick
   const toggleNav = () => {
-    if (mobileNav === false) {
-      setMobileNav(true);
-    } else {
-      setMobileNav(false);
-    }
+    setMobileNav((prevNav) => !prevNav);
   };
 
-  const handleSubboxClick = (event) => {
-    event.stopPropagation();
-  };
-
-  const customSignOut = async () => {
-    handleAuth({}, "logout")
-
+  const handleDropdownClick = (index) => {
+    setOpenDropdown(index === openDropdown ? null : index);
   };
 
   const currecturl = (urltext) => {
@@ -71,74 +52,68 @@ export default function DashboardNav() {
 
   return (
     <>
-      {loading && <Spinner />}
-      {/* for mobile toggle */}
-      <div
-        onClick={toggleNav}
-        className="border-2 lg:hidden border-blue-950 absolute p-1 my-5 px-4"
-      >
+      <div onClick={toggleNav} className="border-2 lg:hidden border-blue-950 absolute p-1 my-5 px-4">
         <MdOpenInFull className="text-xl text-white" />
       </div>
-      {/* for large device */}
-      <div className="h-screen hidden w-2/12 bg-slate-900 lg:inline-block p-5">
+      <div className="h-screen hidden w-2/12 bg-[#111C43] lg:inline-block p-5">
         <ul>
-          <Link
-            href={`/dashboard`}
-            className="cursor-pointer block text-slate-400 hover:text-white hover:bg-slate-700 rounded-md font-bold p-2 px-4 w-full"
-          >
-            Dashboard
-          </Link>
-          {menuItems.map((item) => (
-            <Link
-              href={currecturl(`/dashboard/${item.toLowerCase()}`)}
-              key={item}
-              className="cursor-pointer block text-slate-400 hover:text-white hover:bg-slate-700 rounded-md font-bold p-2 px-4 w-full"
-            >
-              {item}
-            </Link>
+        <Link
+                  href={currecturl(`/dashboard`)}
+                  className="cursor-pointer block text-slate-400 hover:text-white hover:bg-slate-700 rounded-md font-bold p-2 px-4 w-full"
+                >
+                  dashboard
+                </Link>
+          {menuItems.map((item, index) => (
+            <div key={index}>
+              {item.dropdown ? (
+                <>
+                  <button
+                    onClick={() => handleDropdownClick(index)}
+                    className="cursor-pointer flex items-center justify-between text-left text-slate-400 hover:text-white hover:bg-slate-700 rounded-md font-bold p-2 px-4 w-full"
+                  >
+                    <span>{item.name}</span>
+                    <FaPlus />
+                  </button>
+                  {openDropdown === index && (
+                    <div className="ps-5">
+                      {item.items.map((subItem, subIndex) => (
+                        <Link
+                          href={currecturl(`/dashboard/${subItem.toLowerCase()}`)}
+                          key={subIndex}
+                          className="cursor-pointer block text-slate-400 hover:text-white hover:bg-slate-700 rounded-md font-bold p-2 px-4 w-full"
+                        >
+                          {subItem}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <Link
+                  href={currecturl(`/dashboard/${item.name.toLowerCase()}`)}
+                  className="cursor-pointer block text-slate-400 hover:text-white hover:bg-slate-700 rounded-md font-bold p-2 px-4 w-full"
+                >
+                  {item.name}
+                </Link>
+              )}
+            </div>
           ))}
-          <button
-            onClick={customSignOut}
-            className="cursor-pointer my-5 bg-slate-800 block text-slate-400 hover:text-white hover:bg-slate-700 rounded-md font-bold p-2 px-4 w-full"
-          >
-            {loading ? "Loading...." : "Sign Out"}
-          </button>
         </ul>
       </div>
-      {/* for small device  */}
       {mobileNav && (
-        <div
-          onClick={toggleNav}
-          className=" w-12/12 h-screen z-20 fixed top-0 left-0 w-screen"
-        >
-          <div
-            onClick={handleSubboxClick}
-            className="h-screen absolute w-8/12 bg-slate-900 lg:inline-block p-5"
-          >
+        <div onClick={toggleNav} className=" w-12/12 h-screen z-20 fixed top-0 left-0 w-screen">
+          <div className="h-screen absolute w-8/12 bg-slate-900 lg:inline-block p-5">
             <ul>
-              <Link
-                href={`/dashbord`}
-                onClick={toggleNav}
-                className="cursor-pointer block text-slate-400 hover:text-white hover:bg-slate-700 rounded-md font-bold p-2 px-4 w-full"
-              >
-                Dashboard
-              </Link>
-              {menuItems.map((item) => (
+              {menuItems.map((item, index) => (
                 <Link
-                  href={`/dashbord/${item.toLowerCase()}`}
+                  href={`/dashboard/${item.toLowerCase()}`}
                   onClick={toggleNav}
-                  key={item}
+                  key={index}
                   className="cursor-pointer block text-slate-400 hover:text-white hover:bg-slate-700 rounded-md font-bold p-2 px-4 w-full"
                 >
                   {item}
                 </Link>
               ))}
-              <button
-                onClick={customSignOut}
-                className="cursor-pointer my-5 bg-slate-800 block text-slate-400 hover:text-white hover:bg-slate-700 rounded-md font-bold p-2 px-4 w-full"
-              >
-                {loading ? "Loading...." : "Sign Out"}
-              </button>
             </ul>
           </div>
         </div>

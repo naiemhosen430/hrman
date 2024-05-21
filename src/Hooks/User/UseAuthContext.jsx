@@ -28,7 +28,6 @@ export default function UseAuthContext() {
         dispatch({ type: "ADD_AUTHDATA", payload: response?.data || null });
         toast.success(`${action.charAt(0).toUpperCase() + action.slice(1)} successful!`);
         router.push("/dashboard", { scroll: true });
-
       }
     } catch (error) {
       toast.error(error.response?.data?.message || "Signup failed. Please try again.");
