@@ -1,7 +1,10 @@
 import Link from "next/link";
+import Header from "@/app/Components/Shared/Header";
 
 export default function NotFound() {
   return (
+    <>
+<Header />
     <section className="text-center flex items-center justify-center h-screen w-full ">
       <div className="w-8/12 m-auto text-centerss text-white">
         <h1 className="text-6xl font-bold py-4">404</h1>
@@ -14,5 +17,6 @@ export default function NotFound() {
         </div>
       </div>
     </section>
+    </>
   );
 }

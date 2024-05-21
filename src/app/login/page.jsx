@@ -5,6 +5,8 @@ import Link from "next/link";
 import Spinner from "@/app/Components/Loaders/Spinner";
 import UseAuthContext from "@/Hooks/User/UseAuthContext";
 import { toast } from "react-toastify";
+import Header from "@/app/Components/Shared/Header";
+
 
 export default function Page() {
   const { handleAuth, loading } = UseAuthContext();
@@ -24,6 +26,7 @@ export default function Page() {
   return (
     <>
       {loading && <Spinner />}
+      <Header />
 
       <div className="h-screen w-12/12 flex items-center justify-center">
 
