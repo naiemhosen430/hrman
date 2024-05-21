@@ -22,7 +22,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="flex sticky text-slate-300 menu-item-color top-0 nav-bg z-10 justify-center items-center py-2 px-4">
+      <div className="flex sticky menu-item-color top-0 nav-bg z-10 justify-center items-center py-2 px-4">
         <div className="lg:w-3/12 w-10/12">
           <Link href={"/"} className="font-bold block text-2xl">
           HRMAN
