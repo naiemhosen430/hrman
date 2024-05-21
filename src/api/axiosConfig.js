@@ -5,7 +5,7 @@ import { getCookie } from 'cookies-next';
 const token = getCookie("accesstoken");
 
 // Get the base URL from environment variables
-const apiBaseURL = process.env.SERVER_URL || "http://localhost:3000";
+const apiBaseURL = process.env.SERVER_URL;
 
 // Create Axios instance
 const axiosInstance = axios.create({
