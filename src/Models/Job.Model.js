@@ -2,6 +2,10 @@ import { model, Schema } from "mongoose";
 
 const jobSchema = Schema(
   {
+    creatorid: {
+      type: String,
+      required: true,
+    },
     heading: {
       type: String,
       required: true,

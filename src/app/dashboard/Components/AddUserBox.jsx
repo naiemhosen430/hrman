@@ -8,7 +8,7 @@ const JoditEditor = dynamic(() => import('jodit-react'), {
 });
 
 export default function AddUserBox({ openCreateBox }) {
-  const { loading, addNewJob } = UseJobContext();
+  const { loading, addNewJob, status } = UseJobContext();
   const [jobInfo, setJobInfo] = useState({
     heading: "",
     title: "",
@@ -55,8 +55,13 @@ export default function AddUserBox({ openCreateBox }) {
   };
 
   const handleAddUser = async () => {
+    e.preventDefault();
     addNewJob(jobInfo);
   };
+
+  if (status){
+    openCreateBox()
+  }
 
   const renderTextInput = (label, name, type = "text") => (
     <div className="lg:w-6/12 w-12/12 mx-1">
@@ -67,6 +72,7 @@ export default function AddUserBox({ openCreateBox }) {
         className="text-sm p-2 px-4 rounded-md block w-full border-0 bg-slate-950 text-white"
         type={type}
         placeholder="Write"
+        required
         name={name}
         value={jobInfo[name]}
         onChange={handleUseronChange}
@@ -83,6 +89,7 @@ export default function AddUserBox({ openCreateBox }) {
         className="text-sm p-2 px-4 rounded-md block w-full border-0 bg-slate-950 text-white"
         name={name}
         value={jobInfo[name]}
+        required
         onChange={handleUseronChange}
       >
         <option value="">Select {label.toLowerCase()}</option>
@@ -105,6 +112,7 @@ export default function AddUserBox({ openCreateBox }) {
           className="text-sm p-2 px-4 rounded-md block w-full border-0 bg-slate-950 text-white"
           name={name}
           id={name}
+          required
           placeholder="Write"
           value={jobInfo[name]}
           onChange={handleUseronChange}
@@ -135,6 +143,7 @@ export default function AddUserBox({ openCreateBox }) {
           </button>
         </div>
 
+        <form onSubmit={handleAddUser}>
         <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
           {renderTextInput("Enter your Job heading", "heading")}
           {renderTextInput("Enter your Job title", "title")}
@@ -196,12 +205,13 @@ export default function AddUserBox({ openCreateBox }) {
 
         <div className="lg:w-10/12 m-auto py-3 text-center">
           <button
-            onClick={handleAddUser}
+           type="submit"
             className="text-center w-6/12 mx-1 hover:bg-yellow-200 p-3 px-6 rounded-full bg-yellow-300 font-bold text-black"
           >
             {loading ? "Loading..." : "Create Job"}
           </button>
         </div>
+        </form>
       </div>
     </div>
   );
