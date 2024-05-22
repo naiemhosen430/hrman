@@ -81,14 +81,14 @@ export default function page() {
     </div>
 
     <div className="overflow-x-auto">
-      <table className="min-w-full bg-slate-200 text-slate-300">
-        <thead>
+      <table className="min-w-full text-slate-300">
+        <thead className='bg-slate-200'>
           <tr>
-            <th className="lg:text-lg text-xs w-3/12 px-2 py-2">Job Deating</th>
-            <th className="lg:text-lg text-xs w-3/12 px-2 py-2">Posted Date</th>
-            <th className="lg:text-lg text-xs w-2/12 px-2 py-2">Deadline</th>
-            <th className="lg:text-lg text-xs w-2/12 px-2 py-2">Applied Candidate</th>
-            <th className="lg:text-lg text-xs w-2/12 px-2 py-2">Short listed CV</th>
+            <th className="lg:text-[12px] text-[10px] w-3/12 px-2 py-2">Job Deating</th>
+            <th className="lg:text-[12px] text-[10px] w-3/12 px-2 py-2">Posted Date</th>
+            <th className="lg:text-[12px] text-[10px] w-2/12 px-2 py-2">Deadline</th>
+            <th className="lg:text-[12px] text-[10px] w-2/12 px-2 py-2">Applied Candidate</th>
+            <th className="lg:text-[12px] text-[10px] w-2/12 px-2 py-2">Short listed CV</th>
           </tr>
         </thead>
         <tbody>
