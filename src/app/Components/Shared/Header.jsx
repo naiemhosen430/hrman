@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <>
-    <div className="top-0 fixed w-full">
+    <div className="top-0 fixed w-full z-50">
         <div className="flex menu-item-color lg:w-10/12 w-12/12 m-auto  nav-bg z-10 justify-center items-center py-2 px-4">
           <div className="lg:w-3/12 w-10/12">
             <Link href={"/"} className="font-bold block text-2xl">
