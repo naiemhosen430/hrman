@@ -108,6 +108,7 @@ export default function AddUserBox({ openCreateBox }) {
            readonly: false,
            backgroundColor: '#333',
            color: '#ddd', 
+           width: "100%"
           }}
       />
     </div>
