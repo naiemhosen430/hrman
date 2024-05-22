@@ -18,9 +18,9 @@ export default function AddUserBox({ openCreateBox }) {
     qualifications: "",
     festivalbonus: "",
     salaryreview: "",
-    Workplace: "",
-    Salary: "",
-    Deadline: "",
+    workplace: "",
+    salary: "",
+    deadline: "",
     address: "",
     companyname: "",
     companyabout: "",
@@ -155,7 +155,7 @@ export default function AddUserBox({ openCreateBox }) {
         </div>
         <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
           {renderTextInput("Enter your Job description", "description")}
-          {renderTextInput("Enter your Job Deadline", "Deadline", "date")}
+          {renderTextInput("Enter your Job Deadline", "deadline", "date")}
         </div>
 
 
@@ -170,8 +170,8 @@ export default function AddUserBox({ openCreateBox }) {
           {renderSelectInput("Enter your Job salary review", "salaryreview", salaryreviewitems)}
         </div>
         <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
-          {renderSelectInput("Enter your Job Workplace", "Workplace", workplacesitems)}
-          {renderTextInput("Enter your Job Salary", "Salary", "number")}
+          {renderSelectInput("Enter your Job Workplace", "workplace", workplacesitems)}
+          {renderTextInput("Enter your Job Salary", "salary", "number")}
         </div>
         <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
           {renderJoditEditor("Enter your Job address", "address")}
@@ -216,3 +216,5 @@ export default function AddUserBox({ openCreateBox }) {
     </div>
   );
 }
+
+

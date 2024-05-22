@@ -43,7 +43,7 @@ const jobSchema = Schema(
         minlength: [5, `The description must be at least 5 characters long.`],
         maxlength: [2000, `The description must not be more then 100 characters.`],
       },
-      Workplace: {
+      workplace: {
       type: String,
       required: true,
       default: "yearly",
@@ -61,19 +61,19 @@ const jobSchema = Schema(
       default: "yearly",
       enum: ["yearly", "monthly", "weekly", "negotiable", "never"]
     },
-    Salary:{
+    salary:{
       type: Number,
       required: true,
       default: 0
     },
-    Deadline: {
+    deadline: {
       type: Date,
       required: true,
       validate: {
         validator: function(v) {
-          return v > Date.now();
+          return +v > +Date.now();
         },
-        message: props => `Deadline (${props.value}) cannot be in the past!`
+        message: props => `Deadline (${props.value}) cannot be use.!`
       }
     },
     address:{
@@ -88,7 +88,7 @@ const jobSchema = Schema(
       minlength: [5, `The company name must be at least 5 characters long.`],
       maxlength: [100, `The company name must not be more then 100 characters.`],
     },
-    companynabout:{
+    companyabout:{
       type: String,
       required: true,
       minlength: [5, `The company about must be at least 5 characters long.`],
