@@ -3,6 +3,7 @@ import "./globals.css";
 import AuthContexProvider from "@/Contexts/AuthContex";
 import {ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { JobContextProvider } from "@/Contexts/JobContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <AuthContexProvider>
-          {children}
+          <JobContextProvider>
+            {children}
+          </JobContextProvider>
         </AuthContexProvider>
         <ToastContainer />
       </body>
