@@ -81,7 +81,7 @@ export default function page() {
     </div>
 
     <div className="overflow-x-auto">
-      <table className="min-w-full bg-slate-900 text-slate-300">
+      <table className="min-w-full bg-slate-200 text-slate-300">
         <thead>
           <tr>
             <th className="lg:text-lg text-xs w-3/12 px-2 py-2">Job Deating</th>
@@ -107,7 +107,7 @@ export default function page() {
             </tr>
           ) : (
             alljobs?.map((user) => (
-              <tr key={user?.email} className="hover:bg-slate-900 text-white">
+              <tr key={user?.email} className="hover:bg-slate-200 border text-white">
                 <td className="lg:text-[12px] text-[10px] w-3/12 px-2">{user?.name}</td>
                 <td className="lg:text-[12px] text-[10px] w-3/12 px-2">{user?.email}</td>
                 <td className="lg:text-[12px] text-[10px] w-2/12 px-2">{user?.role}</td>
