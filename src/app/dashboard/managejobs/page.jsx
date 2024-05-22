@@ -92,15 +92,6 @@ export default function page() {
           </tr>
         </thead>
         <tbody>
-          {error && (
-            error === "success" ? null : (
-              <tr>
-                <td colSpan="5" className="border flex items-center rounded-lg text-xs bg-red-950 text-black shadow-xl bg-transparent p-2 text-center">
-                  <MdErrorOutline className="mx-2" /> {error}
-                </td>
-              </tr>
-            )
-          )}
           {loading && (
             <tr>
               <td colSpan="5">
