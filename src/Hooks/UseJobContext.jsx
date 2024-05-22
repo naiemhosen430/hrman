@@ -3,7 +3,7 @@ import { JobContext } from '@/Contexts/JobContext';
 import { getApiCall, postApiCall } from '@/api/fatchData';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useState } from 'react'
-import toast from 'react-hot-toast';
+import { toast } from "react-toastify";
 
 export default function UseJobContext() {
     const jobContext = useContext(JobContext);
@@ -35,8 +35,8 @@ export default function UseJobContext() {
 
     // for add new job 
     const addNewJob = async (data) => {
-      toast.success(`Working with the feature!`);
-console.log(data)
+      toast.error(`Working with the feature!`);
+      console.log(data)
     }
 
   return {
