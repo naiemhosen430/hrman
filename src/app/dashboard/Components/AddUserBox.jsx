@@ -96,7 +96,7 @@ export default function AddUserBox({ openCreateBox }) {
   );
 
   const renderJoditEditor = (label, name) => (
-    <div className="lg:w-6/12 w-12/12 mx-1">
+    <div className="w-12/12 mx-1">
       <label className="py-2 block text-lg text-yellow-200" htmlFor={name}>
         {label}
       </label>
@@ -123,12 +123,21 @@ export default function AddUserBox({ openCreateBox }) {
           {renderTextInput("Enter your Job heading", "heading")}
           {renderTextInput("Enter your Job title", "title")}
         </div>
+
+
         <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
-          {renderTextInput("Enter your Job description", "description")}
           {renderJoditEditor("Enter your Job requirements", "requirments")}
         </div>
         <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
+          {renderTextInput("Enter your Job description", "description")}
+          {renderTextInput("Enter your Job Deadline", "Deadline", "date")}
+        </div>
+
+
+        <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
           {renderJoditEditor("Enter your Job how to apply", "howtoapply")}
+        </div>
+        <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
           {renderJoditEditor("Enter your Job qualifications", "qualifications")}
         </div>
         <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
@@ -140,11 +149,12 @@ export default function AddUserBox({ openCreateBox }) {
           {renderTextInput("Enter your Job Salary", "Salary", "number")}
         </div>
         <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
-          {renderTextInput("Enter your Job Deadline", "Deadline", "date")}
           {renderJoditEditor("Enter your Job address", "address")}
         </div>
         <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
           {renderJoditEditor("Enter your company name", "companyname")}
+        </div>
+        <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
           {renderJoditEditor("Enter your company about", "companyabout")}
         </div>
         <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
@@ -152,16 +162,20 @@ export default function AddUserBox({ openCreateBox }) {
           {renderTextInput("Enter your company LinkedIn", "companylinkedin")}
         </div>
         <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
-          {renderTextInput("Enter your company email", "companyemail", "email")}
           {renderJoditEditor("Enter your expected area from", "azpectedareafrom")}
         </div>
         <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
-          {renderJoditEditor("Enter your Job additional skill", "aditionalskill")}
           {renderJoditEditor("Enter your Job benefits", "benefits")}
+        </div>
+        <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
+          {renderJoditEditor("Enter your Job additional skill", "aditionalskill")}
         </div>
         <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
           {renderSelectInput("Enter your employment status", "employmentstatus", employeementstatusitems)}
           {renderTextInput("Enter your skills", "skills")}
+        </div>
+        <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
+          {renderTextInput("Enter your company email", "companyemail", "email")}
         </div>
 
         <div className="lg:w-10/12 m-auto py-3 text-center">
