@@ -32,8 +32,15 @@ export default function UseJobContext() {
         }
     }
 
+
+    // for add new job 
+    const addNewJob = async (data) => {
+console.log(data)
+    }
+
   return {
     getAllJobs,
-    loading
+    loading,
+    addNewJob
   }
 }

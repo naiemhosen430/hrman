@@ -1,12 +1,12 @@
 "use client";
-import React, { useContext, useEffect, useState } from "react";
-import { MdErrorOutline } from "react-icons/md";
+import UseJobContext from "@/Hooks/UseJobContext";
+import React, { useState } from "react";
 
 export default function AddUserBox({
   openCreateBox
 }) {
-  const [countries, setCountries] = useState([]);
-  const [userInfo, setuserInfo] = useState({
+  const {loading,addNewJob} = UseJobContext()
+  const [jobInfo, setJobInfo] = useState({
     name: "",
     email: "",
     role: "",
@@ -17,7 +17,7 @@ export default function AddUserBox({
 
   const handleUseronChange = (e) => {
     const { name, value } = e.target;
-    setuserInfo((prevState) => ({
+    setJobInfo((prevState) => ({
         ...prevState,
         [name]: value,
     }));
@@ -28,7 +28,7 @@ export default function AddUserBox({
 
 
   const handleAddUser = async () => {
-    openCreateBox()
+    addNewJob(jobInfo)
   };
 
 
@@ -61,7 +61,7 @@ export default function AddUserBox({
               type="text"
               placeholder="Write"
               name="name"
-              value={userInfo.name}
+              value={jobInfo.name}
               onChange={handleUseronChange}
             />
           </div>
@@ -75,7 +75,7 @@ export default function AddUserBox({
               type="email"
               placeholder="Write"
               name="email"
-              value={userInfo.email}
+              value={jobInfo.email}
               onChange={handleUseronChange}
             />
           </div>
@@ -88,7 +88,7 @@ export default function AddUserBox({
               className="text-sm p-2 px-4 rounded-md block w-full border-0 bg-slate-950 text-white"
               name="role"
               id="role"
-              value={userInfo.role}
+              value={jobInfo.role}
               onChange={handleUseronChange}
             >
               <option value="">Select role</option>
