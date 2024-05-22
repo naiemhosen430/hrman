@@ -7,13 +7,13 @@
 
 .loading {
   animation: loading 1s ease-out infinite alternate;
-  background: linear-gradient(to right, #5c1e1e, #29295c);
+  background: linear-gradient(to right, #c6b5b5, #ffffff);
   background-size: 200% 100%;
 }
 
 .loadingbig {
   animation: loading 1s ease-out infinite alternate;
-  background: linear-gradient(to right, #5c1e1e, #29295c);
+  background: linear-gradient(to right, #c6b5b5, #ffffff);
   background-size: 200% 100%;
 }
 
