@@ -79,16 +79,16 @@ export default function page() {
     <div className="lg:py-2 p-1 text-right">
       <button
         onClick={openCreateBox}
-        className="py-2 px-4 rounded-xl bg-slate-800 text-white"
+        className="py-2 px-4 text-[12px] rounded-xl bg-slate-800 text-white"
       >
-        Add a new user
+        Add a new job
       </button>
     </div>
 
     <div className="overflow-x-auto">
       <table className="min-w-full">
         <thead className='bg-slate-200 font-bold'>
-          <tr>
+          <tr className='py-2'>
             <th className="lg:text-[12px] text-[10px] w-3/12 px-2 py-2">Job Deating</th>
             <th className="lg:text-[12px] text-[10px] w-3/12 px-2 py-2">Posted Date</th>
             <th className="lg:text-[12px] text-[10px] w-2/12 px-2 py-2">Deadline</th>
@@ -112,7 +112,7 @@ export default function page() {
             </tr>
           ) : (
             alljobs?.map((user) => (
-              <tr key={user?.email} className="hover:bg-slate-200 border">
+              <tr key={user?.email} className="hover:bg-slate-200 py-2 border">
                 <td className="lg:text-[12px] text-[10px] w-3/12 px-2">{user?.name}</td>
                 <td className="lg:text-[12px] text-[10px] w-3/12 px-2">{user?.email}</td>
                 <td className="lg:text-[12px] text-[10px] w-2/12 px-2">{user?.role}</td>

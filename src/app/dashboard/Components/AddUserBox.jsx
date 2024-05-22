@@ -101,34 +101,6 @@ export default function AddUserBox({
           </div>
 
           <div className="lg:w-10/12 m-auto py-2">
-          <label
-            htmlFor="role"
-            className="py-2 block text-lg text-yellow-200"
-          >
-            role
-          </label>
-          <select
-              name="role"
-              id="role"
-              value={userInfo.role}
-              onChange={handleUseronChange} className="text-sm p-2 px-4 rounded-md block w-full border-0 bg-slate-950 text-white">
-            <option
-              value={"all"}
-              selected
-              className="p-4 block px-8 bg-black hover:bg-slate-600"
-            >
-              World Wide
-            </option>
-            {sortedCountries.map((role) => (
-              <option
-                className="p-4 block px-8 bg-black hover:bg-slate-600"
-                key={role.cca2}
-                value={role.name.common}
-              >
-                {role.name.common}
-              </option>
-            ))}
-          </select>
         </div>
 
 
