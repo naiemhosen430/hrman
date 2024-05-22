@@ -1,6 +1,6 @@
 'use client'
 import Header from '@/app/Components/Shared/Header'
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import { usePathname } from 'next/navigation'
 import { JobContext } from '@/Contexts/JobContext'
 import { toast } from "react-toastify";
