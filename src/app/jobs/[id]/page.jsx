@@ -3,6 +3,7 @@ import Header from '@/app/Components/Shared/Header'
 import React, {useContext} from 'react'
 import { usePathname } from 'next/navigation'
 import { JobContext } from '@/Contexts/JobContext'
+import { toast } from "react-toastify";
 
 export default function page() {
   const {state} = useContext(JobContext) 
@@ -11,6 +12,11 @@ export default function page() {
   const id = pathname.split("jobs/")[1]
 
   const jobData = alljobs?.find((item)=>item._id === id)
+
+
+  const showApplyNowPopup = () => {
+    toast.success(`This feature is under contruction!`);
+  }
 
   return (
     <>
@@ -115,7 +121,13 @@ export default function page() {
           <span className="text-xl inline-block pr-2 font-bold">How to apply:</span>
           <span className="text-sm">{jobData?.howtoapply}</span>
         </p>
+
+        <div className="py-5">
+        <button className="p-2 px-4 rounded-xl bg-black text-white font-bold text-xl" onClick={showApplyNowPopup} >Aooly now</button>
+
         </div>
+        </div>
+
       </div>
     </>
   )
