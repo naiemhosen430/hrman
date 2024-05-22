@@ -10,6 +10,7 @@ import { JobContext } from '@/Contexts/JobContext';
 
 export default function page() {
   const {getAllJobs,loading} = UseJobContext()
+  const [createQuestionBox, setCreateQuestionBox] = useState(false);
   const {state} = useContext(JobContext) 
   const alljobs = state.alljob
 
