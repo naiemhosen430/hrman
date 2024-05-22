@@ -101,14 +101,12 @@ export default function AddUserBox({ openCreateBox }) {
         {label}
       </label>
       <JoditEditor
+        className="text-sm p-2 px-4 rounded-md block w-full border-0 bg-slate-950 text-white"
         value={jobInfo[name]}
         onChange={(content) => handleEditorChange(content, name)}
         tabIndex={1}
         config={{
            readonly: false,
-           backgroundColor: '#333',
-           color: '#ddd', 
-           width: "100%"
           }}
       />
     </div>
