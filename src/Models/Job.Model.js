@@ -135,9 +135,9 @@ const jobSchema = Schema(
       enum: ["fulltime", "parttime", "negotiable"]
     },
     skills:{
-      type: Array,
+      type: String,
       required: true,
-      default: [],
+      default: "",
     },
     apllicatorids:{
       type: Array,
