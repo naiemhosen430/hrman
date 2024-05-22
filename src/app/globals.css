@@ -27,3 +27,11 @@
       opacity: 80%;
   }
 }
+
+.action-popup{
+  display: none;
+}
+
+.hover-item:hover > .action-popup{
+  display: block;
+}

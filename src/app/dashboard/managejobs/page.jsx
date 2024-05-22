@@ -6,6 +6,7 @@ import { useContext, useEffect, useState } from 'react';
 import LilSpinner from '@/app/Components/Loaders/LilSpinner';
 import { JobContext } from '@/Contexts/JobContext';
 import { BsThreeDotsVertical } from "react-icons/bs";
+import Link from 'next/link';
 
 
 export default function page() {
@@ -89,12 +90,12 @@ export default function page() {
       <table className="min-w-full">
         <thead className='bg-slate-200 font-bold'>
           <tr className='py-2 text-left'>
-            <th className="lg:text-[12px] text-[10px] w-3/12 px-2 py-2">Job Deating</th>
-            <th className="lg:text-[12px] text-[10px] w-3/12 px-2 py-2">Posted Date</th>
-            <th className="lg:text-[12px] text-[10px] w-2/12 px-2 py-2">Deadline</th>
-            <th className="lg:text-[12px] text-[10px] w-2/12 px-2 py-2">Applied Candidate</th>
-            <th className="lg:text-[12px] text-[10px] w-1/12 px-2 py-2">Short listed CV</th>
-            <th className="lg:text-[12px] text-[10px] w-1/12 px-2 py-2">Action</th>
+            <th className="lg:text-[12px] text-[10px] w-3/12 px-4 py-2">Job Deating</th>
+            <th className="lg:text-[12px] text-[10px] w-3/12 px-4 py-2">Posted Date</th>
+            <th className="lg:text-[12px] text-[10px] w-2/12 px-4 py-2">Deadline</th>
+            <th className="lg:text-[12px] text-[10px] w-2/12 px-4 py-2">Applied Candidate</th>
+            <th className="lg:text-[12px] text-[10px] w-1/12 px-4 py-2">Short listed CV</th>
+            <th className="lg:text-[12px] text-[10px] w-1/12 px-4 py-2">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -113,14 +114,22 @@ export default function page() {
             </tr>
           ) : (
             alljobs?.map((job) => (
+              <>
               <tr key={job?._id} className="hover:bg-slate-200 py-2 border">
                 <td className="lg:text-[12px] text-[10px] w-3/12 p-2 px-4">{job?.heading}</td>
                 <td className="lg:text-[12px] text-[10px] w-3/12 p-2 px-4">{job?.createdAt?.slice(0,10)}</td>
                 <td className="lg:text-[12px] text-[10px] w-2/12 p-2 px-4">{job?.deadline?.slice(0,10)}</td>
                 <td className="lg:text-[12px] text-[10px] w-2/12 p-2 px-4">{job?.apllicatorids?.length}</td>
                 <td className="lg:text-[12px] text-[10px] w-2/12 p-2 px-4">{job?.shortlistedids?.length}</td>
-                <td className="lg:text-[12px] text-[10px] w-1/12 p-2 px-4"><BsThreeDotsVertical /></td>
+                <td className="lg:text-[12px] text-[10px] w-1/12 p-2 px-4 hover-item relative">
+                  <BsThreeDotsVertical />
+                    <div className='inline-block p-4 absolute action-popup right-0 top-0 bg-black'>
+                      <button className='p-2 px-4 hover:bg-slate-800 text-white'>Edit</button>
+                      <Link href={`/jobs/${job?._id}`} className='p-2 px-4 hover:bg-slate-800 text-white'>View</Link>
+                    </div>
+                </td>
               </tr>
+              </>
             ))
           )}
         </tbody>
