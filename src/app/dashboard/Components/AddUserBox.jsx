@@ -1,8 +1,11 @@
 "use client";
 import UseJobContext from "@/Hooks/UseJobContext";
+import dynamic from "next/dynamic";
 import React, { useState } from "react";
 import { IoClose } from "react-icons/io5";
-import JoditEditor from "jodit-react";
+const JoditEditor = dynamic(() => import('jodit-react'), {
+  ssr: false,
+});
 
 export default function AddUserBox({ openCreateBox }) {
   const { loading, addNewJob } = UseJobContext();
