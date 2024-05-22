@@ -2,14 +2,24 @@
 import PageHeader from '../Components/PageHeader';
 import AddUserBox from "../Components/AddUserBox";
 import { MdErrorOutline } from "react-icons/md";
+import UseJobContext from '@/Hooks/UseJobContext';
+import { useContext, useEffect } from 'react';
+import LilSpinner from '@/app/Components/Loaders/LilSpinner';
+import { JobContext } from '@/Contexts/JobContext';
 
 
 export default function page() {
+  const {getAllJobs,loading} = UseJobContext()
+  const {state} = useContext(JobContext) 
+  const alljobs = state.alljob
 
-  const allusers = null
+  useEffect(()=>{
+    getAllJobs()
+  },[])
 
 
-  if (!allusers) {
+
+  if (!alljobs) {
     return (
 
         <div className="space-y-4 p-2 lg:p-10 lg:pt-5 text-center">
@@ -97,14 +107,14 @@ export default function page() {
               </td>
             </tr>
           )}
-          {allusers.length === 0 ? (
+          {alljobs.length === 0 ? (
             <tr>
               <td colSpan="5" className="text-center text-2xl text-slate-500 py-10">
                 No Record Found!
               </td>
             </tr>
           ) : (
-            allusers?.map((user) => (
+            alljobs?.map((user) => (
               <tr key={user?.email} className="hover:bg-slate-900 text-white">
                 <td className="lg:text-lg text-xs w-3/12 px-2">{user?.name}</td>
                 <td className="lg:text-lg text-xs w-3/12 px-2">{user?.email}</td>

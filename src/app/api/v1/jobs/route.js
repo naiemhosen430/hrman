@@ -1,4 +1,4 @@
-import User from "@/Models/User.Model";
+import Job from "@/Models/Job.Model";
 import { checkAuthorization } from "@/Utils/checkAutorization";
 import { dbconnect } from "@/Utils/mongo";
 
@@ -10,17 +10,20 @@ export async function GET(request) {
     // checking authentication 
     const userInfo = await checkAuthorization(request)
 
+    let jobs 
     if (!userInfo){
-      return Response.json({ message:"unauthorized!" }, { status: 401 })
+        jobs = await Job.find()
     }
 
 
-    const user = await User.findOne({_id: userInfo.id})
+    jobs = await Job.find().select(
+        -apllicatorids 
+    )
 
 
     return Response.json({
       message: "Successfull.",
-      data: user,
+      data: jobs,
       statusCode: 200,
     },
     { status: 200 });

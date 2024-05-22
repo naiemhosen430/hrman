@@ -3,8 +3,13 @@ const { createContext, useReducer } = require("react");
 
 export const JobContext = createContext()
 
-const jobReducer = () => {
-    console.log("hello")
+const jobReducer = (state, action) => {
+    switch (action.type) {
+        case "ADD_ALL_JOB":
+          return { ...state, alljob: action.payload };
+        default:
+          return state;
+      }
 }
 
 export const JobContextProvider = ({children}) => {

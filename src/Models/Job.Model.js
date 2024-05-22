@@ -137,11 +137,6 @@ const jobSchema = Schema(
       required: true,
       default: [],
     },
-    apllication:{
-      type: Number,
-      required: false,
-      default: 0,
-    },
     apllicatorids:{
       type: Array,
       required: false,

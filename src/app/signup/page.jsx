@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Spinner from "@/app/Components/Loaders/Spinner";
-import UseAuthContext from "@/Hooks/User/UseAuthContext";
+import UseAuthContext from "@/Hooks/UseAuthContext";
 import { toast } from "react-toastify";
 import Header from "@/app/Components/Shared/Header";
 
