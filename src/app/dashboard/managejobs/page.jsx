@@ -61,16 +61,19 @@ export default function page() {
   }
 
   const openCreateBox = () => {
-    setCreateQuestionBox(true);
+    if (createQuestionBox){
+      setCreateQuestionBox(false);
+    }else{
+      setCreateQuestionBox(true);
+    }
   };
   return (
 <>
   <PageHeader />
   <AddUserBox
-    createQuestionBox={createQuestionBox}
-    setCreateQuestionBox={setCreateQuestionBox}
+    openCreateBox={openCreateBox}
   />
-  <div className="space-y-4 p-2 lg:p-10 lg:pt-5 text-center">
+  <div className="p-4">
     <div className="lg:py-2 p-1 text-right">
       <button
         onClick={openCreateBox}
@@ -81,8 +84,8 @@ export default function page() {
     </div>
 
     <div className="overflow-x-auto">
-      <table className="min-w-full text-slate-300">
-        <thead className='bg-slate-200'>
+      <table className="min-w-full">
+        <thead className='bg-slate-200 font-bold'>
           <tr>
             <th className="lg:text-[12px] text-[10px] w-3/12 px-2 py-2">Job Deating</th>
             <th className="lg:text-[12px] text-[10px] w-3/12 px-2 py-2">Posted Date</th>
@@ -107,7 +110,7 @@ export default function page() {
             </tr>
           ) : (
             alljobs?.map((user) => (
-              <tr key={user?.email} className="hover:bg-slate-200 border text-white">
+              <tr key={user?.email} className="hover:bg-slate-200 border">
                 <td className="lg:text-[12px] text-[10px] w-3/12 px-2">{user?.name}</td>
                 <td className="lg:text-[12px] text-[10px] w-3/12 px-2">{user?.email}</td>
                 <td className="lg:text-[12px] text-[10px] w-2/12 px-2">{user?.role}</td>

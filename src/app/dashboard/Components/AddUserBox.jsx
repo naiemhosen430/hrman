@@ -3,8 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { MdErrorOutline } from "react-icons/md";
 
 export default function AddUserBox({
-  createQuestionBox,
-  setCreateQuestionBox,
+  openCreateBox
 }) {
   const [countries, setCountries] = useState([]);
   const [userInfo, setuserInfo] = useState({
@@ -29,32 +28,13 @@ export default function AddUserBox({
 
 
   const handleAddUser = async () => {
-  };
-
-  const closeCreateBox = () => {
-    setCreateQuestionBox(false);
+    openCreateBox()
   };
 
 
-//   for role api 
-useEffect(() => {
-    const fetchData = () => {
-      fetch("https://restcountries.com/v3.1/all")
-        .then((response) => response.json())
-        .then((data) => {
-          setCountries(data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    };
 
-    fetchData();
-  }, []);
 
-  const sortedCountries = countries.slice().sort((a, b) => {
-    return a.name.common.localeCompare(b.name.common);
-  });
+
 
   return (
     <>
@@ -67,7 +47,7 @@ useEffect(() => {
               </h1>
               <button
                 className="bg-none text-2xl text-white"
-                onClick={closeCreateBox}
+                onClick={openCreateBox}
               >
                 Cancel
               </button>
