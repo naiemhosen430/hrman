@@ -154,7 +154,7 @@ export default function AddUserBox({ openCreateBox }) {
           {renderJoditEditor("Enter your Job requirements", "requirments")}
         </div>
         <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
-          {renderTextInput("Enter your Job description", "description")}
+          {renderTextInput("Enter your company name", "companyname")}
           {renderTextInput("Enter your Job Deadline", "deadline", "date")}
         </div>
 
@@ -177,7 +177,7 @@ export default function AddUserBox({ openCreateBox }) {
           {renderJoditEditor("Enter your Job address", "address")}
         </div>
         <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
-          {renderJoditEditor("Enter your company name", "companyname")}
+          {renderJoditEditor("Enter your Job description", "description")}
         </div>
         <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
           {renderJoditEditor("Enter your company about", "companyabout")}
