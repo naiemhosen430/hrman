@@ -4,12 +4,18 @@ import React, {useContext} from 'react'
 import { usePathname } from 'next/navigation'
 import { JobContext } from '@/Contexts/JobContext'
 import { toast } from "react-toastify";
+import UseJobContext from "@/Hooks/UseJobContext";
 
 export default function page() {
   const {state} = useContext(JobContext) 
   const alljobs = state.alljob
   const pathname = usePathname()
   const id = pathname.split("jobs/")[1]
+
+  const {getAllJobs,loading} = UseJobContext()
+  useEffect(()=>{
+    getAllJobs()
+  },[])
 
   const jobData = alljobs?.find((item)=>item._id === id)
 
