@@ -144,6 +144,11 @@ const jobSchema = Schema(
       required: false,
       default: [],
     },
+    shortlistedids:{
+      type: Array,
+      required: false,
+      default: [],
+    },
   },
   {
     timestamps: true,

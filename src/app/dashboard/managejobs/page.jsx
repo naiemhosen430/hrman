@@ -1,11 +1,11 @@
 "use client";
 import PageHeader from '../Components/PageHeader';
 import AddUserBox from "../Components/AddUserBox";
-import { MdErrorOutline } from "react-icons/md";
 import UseJobContext from '@/Hooks/UseJobContext';
 import { useContext, useEffect, useState } from 'react';
 import LilSpinner from '@/app/Components/Loaders/LilSpinner';
 import { JobContext } from '@/Contexts/JobContext';
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 
 export default function page() {
@@ -93,7 +93,8 @@ export default function page() {
             <th className="lg:text-[12px] text-[10px] w-3/12 px-2 py-2">Posted Date</th>
             <th className="lg:text-[12px] text-[10px] w-2/12 px-2 py-2">Deadline</th>
             <th className="lg:text-[12px] text-[10px] w-2/12 px-2 py-2">Applied Candidate</th>
-            <th className="lg:text-[12px] text-[10px] w-2/12 px-2 py-2">Short listed CV</th>
+            <th className="lg:text-[12px] text-[10px] w-1/12 px-2 py-2">Short listed CV</th>
+            <th className="lg:text-[12px] text-[10px] w-1/12 px-2 py-2">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -111,13 +112,13 @@ export default function page() {
               </td>
             </tr>
           ) : (
-            alljobs?.map((user) => (
-              <tr key={user?.email} className="hover:bg-slate-200 py-2 border">
-                <td className="lg:text-[12px] text-[10px] w-3/12 px-2">{user?.name}</td>
-                <td className="lg:text-[12px] text-[10px] w-3/12 px-2">{user?.email}</td>
-                <td className="lg:text-[12px] text-[10px] w-2/12 px-2">{user?.role}</td>
-                <td className="lg:text-[12px] text-[10px] w-2/12 px-2">{user?.country}</td>
-                <td className="lg:text-[12px] text-[10px] w-2/12 px-2">{user?.status}</td>
+            alljobs?.map((job) => (
+              <tr key={job?._id} className="hover:bg-slate-200 py-2 border">
+                <td className="lg:text-[12px] text-[10px] w-3/12 px-2">{job?.heading}</td>
+                <td className="lg:text-[12px] text-[10px] w-3/12 px-2">{job?.email}</td>
+                <td className="lg:text-[12px] text-[10px] w-2/12 px-2">{job?.deadline}</td>
+                <td className="lg:text-[12px] text-[10px] w-2/12 px-2">{job?.apllicatorids?.length}</td>
+                <td className="lg:text-[12px] text-[10px] w-1/12 px-2"><BsThreeDotsVertical /></td>
               </tr>
             ))
           )}
