@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Header from "@/app/Components/Shared/Header";
 import UseJobContext from "@/Hooks/UseJobContext";
+import { useEffect } from "react";
 
 export default function Home() {
   const {getAllJobs,loading} = UseJobContext()
