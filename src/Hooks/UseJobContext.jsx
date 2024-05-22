@@ -35,6 +35,7 @@ export default function UseJobContext() {
 
     // for add new job 
     const addNewJob = async (data) => {
+      toast.success(`Working with the feature!`);
 console.log(data)
     }
 
