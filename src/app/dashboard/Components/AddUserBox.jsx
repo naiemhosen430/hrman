@@ -233,8 +233,6 @@ export default function AddUserBox({
           </div>
 
           <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
-            <div className="lg:w-6/12 w-12/12 mx-1">
-
                 <div className="lg:w-6/12 w-12/12 mx-1">
                 <label className="py-2 block text-lg text-yellow-200" htmlFor="Salary">
                   Enter your Job Salary
@@ -247,7 +245,6 @@ export default function AddUserBox({
                   value={jobInfo.Salary}
                   onChange={handleUseronChange}
                 />
-              </div>
               </div>
 
               <div className="lg:w-6/12 w-12/12 mx-1">
@@ -267,8 +264,6 @@ export default function AddUserBox({
 
 
           <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
-            <div className="lg:w-6/12 w-12/12 mx-1">
-
                 <div className="lg:w-6/12 w-12/12 mx-1">
                 <label className="py-2 block text-lg text-yellow-200" htmlFor="address">
                   Enter your Job address
@@ -281,7 +276,6 @@ export default function AddUserBox({
                   value={jobInfo.address}
                   onChange={handleUseronChange}
                 />
-              </div>
               </div>
 
               <div className="lg:w-6/12 w-12/12 mx-1">
@@ -300,8 +294,6 @@ export default function AddUserBox({
           </div>
 
           <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
-            <div className="lg:w-6/12 w-12/12 mx-1">
-
                 <div className="lg:w-6/12 w-12/12 mx-1">
                 <label className="py-2 block text-lg text-yellow-200" htmlFor="companynabout">
                   Enter your Job companynabout
@@ -314,7 +306,6 @@ export default function AddUserBox({
                   value={jobInfo.companynabout}
                   onChange={handleUseronChange}
                 />
-              </div>
               </div>
 
               <div className="lg:w-6/12 w-12/12 mx-1">
@@ -333,8 +324,6 @@ export default function AddUserBox({
           </div>
 
           <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
-            <div className="lg:w-6/12 w-12/12 mx-1">
-
                 <div className="lg:w-6/12 w-12/12 mx-1">
                 <label className="py-2 block text-lg text-yellow-200" htmlFor="companylinkedin">
                   Enter your Job company linkedin
@@ -347,7 +336,6 @@ export default function AddUserBox({
                   value={jobInfo.companylinkedin}
                   onChange={handleUseronChange}
                 />
-              </div>
               </div>
 
               <div className="lg:w-6/12 w-12/12 mx-1">
@@ -366,8 +354,6 @@ export default function AddUserBox({
           </div>
 
           <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
-            <div className="lg:w-6/12 w-12/12 mx-1">
-
                 <div className="lg:w-6/12 w-12/12 mx-1">
                 <label className="py-2 block text-lg text-yellow-200" htmlFor="azpectedareafrom">
                   Enter your Job azpected area from
@@ -380,7 +366,6 @@ export default function AddUserBox({
                   value={jobInfo.azpectedareafrom}
                   onChange={handleUseronChange}
                 />
-              </div>
               </div>
 
               <div className="lg:w-6/12 w-12/12 mx-1">
@@ -399,8 +384,6 @@ export default function AddUserBox({
           </div>
 
           <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
-            <div className="lg:w-6/12 w-12/12 mx-1">
-
                 <div className="lg:w-6/12 w-12/12 mx-1">
                 <label className="py-2 block text-lg text-yellow-200" htmlFor="benefits">
                   Enter your Job benefits
@@ -413,7 +396,6 @@ export default function AddUserBox({
                   value={jobInfo.benefits}
                   onChange={handleUseronChange}
                 />
-              </div>
               </div>
 
               <div className="lg:w-6/12 w-12/12 mx-1">
@@ -438,8 +420,6 @@ export default function AddUserBox({
           </div>
 
           <div className="lg:w-10/12 w-12/12 lg:flex items-center m-auto py-2">
-            <div className="lg:w-6/12 w-12/12 mx-1">
-
                 <div className="lg:w-6/12 w-12/12 mx-1">
                 <label className="py-2 block text-lg text-yellow-200" htmlFor="skills">
                   Enter your Job skills
@@ -452,7 +432,6 @@ export default function AddUserBox({
                   value={jobInfo.skills}
                   onChange={handleUseronChange}
                 />
-              </div>
               </div>
 
 
