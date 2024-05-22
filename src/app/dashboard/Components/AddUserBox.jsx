@@ -95,13 +95,23 @@ export default function AddUserBox({ openCreateBox }) {
     </div>
   );
 
-  
+
   const renderJoditEditor = (label, name) => (
-    <div className="w-12/12 mx-1">
+    <div className="w-full">
         <label className="py-2 block text-lg text-yellow-200" htmlFor={name}>
             {label}
         </label>
-        <JoditEditor
+        <textarea 
+          className="text-sm p-2 px-4 rounded-md block w-full border-0 bg-slate-950 text-white"
+          name={name}
+          id={name}
+          placeholder="Write"
+          value={jobInfo[name]}
+          onChange={handleUseronChange}
+        ></textarea>
+
+        {/* we will thing later  */}
+        {/* <JoditEditor
             value={jobInfo[name]}
             onChange={(content) => handleEditorChange(content, name)}
             tabIndex={1}
@@ -109,7 +119,7 @@ export default function AddUserBox({ openCreateBox }) {
                 readonly: false,
                 theme: 'dark',
             }}
-        />
+        /> */}
     </div>
 );
 
