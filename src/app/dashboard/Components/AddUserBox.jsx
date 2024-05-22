@@ -104,7 +104,11 @@ export default function AddUserBox({ openCreateBox }) {
         value={jobInfo[name]}
         onChange={(content) => handleEditorChange(content, name)}
         tabIndex={1}
-        config={{ readonly: false }}
+        config={{
+           readonly: false,
+           backgroundColor: '#333',
+           color: '#ddd', 
+          }}
       />
     </div>
   );
