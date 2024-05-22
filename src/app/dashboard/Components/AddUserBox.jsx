@@ -54,7 +54,7 @@ export default function AddUserBox({ openCreateBox }) {
     }));
   };
 
-  const handleAddUser = async () => {
+  const handleAddUser = async (e) => {
     e.preventDefault();
     addNewJob(jobInfo);
   };
