@@ -86,7 +86,7 @@ export default function page() {
       </button>
     </div>
 
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto h-screen overflow-y-auto">
       <table className="min-w-full">
         <thead className='bg-slate-200 font-bold'>
           <tr className='py-2 text-left'>
