@@ -102,17 +102,17 @@ export default function page() {
           {alljobs.length === 0 ? (
             <tr>
               <td colSpan="5" className="text-center text-2xl text-slate-500 py-10">
-                No Record Found!
+                No Job Found!
               </td>
             </tr>
           ) : (
             alljobs?.map((user) => (
               <tr key={user?.email} className="hover:bg-slate-900 text-white">
-                <td className="lg:text-lg text-xs w-3/12 px-2">{user?.name}</td>
-                <td className="lg:text-lg text-xs w-3/12 px-2">{user?.email}</td>
-                <td className="lg:text-lg text-xs w-2/12 px-2">{user?.role}</td>
-                <td className="lg:text-lg text-xs w-2/12 px-2">{user?.country}</td>
-                <td className="lg:text-lg text-xs w-2/12 px-2">{user?.status}</td>
+                <td className="lg:text-[12px] text-[10px] w-3/12 px-2">{user?.name}</td>
+                <td className="lg:text-[12px] text-[10px] w-3/12 px-2">{user?.email}</td>
+                <td className="lg:text-[12px] text-[10px] w-2/12 px-2">{user?.role}</td>
+                <td className="lg:text-[12px] text-[10px] w-2/12 px-2">{user?.country}</td>
+                <td className="lg:text-[12px] text-[10px] w-2/12 px-2">{user?.status}</td>
               </tr>
             ))
           )}

@@ -152,14 +152,6 @@ useEffect(() => {
             </select>
           </div>
 
-          {error &&
-            (error === "success" ? (
-              ""
-            ) : (
-              <h1 className="border flex items-center rounded-lg text-xs bg-red-950 text-black shadow-xl bg-transparent p-2 text-center">
-                <MdErrorOutline className="mx-2" /> {error}
-              </h1>
-            ))}
 
 
             <div className="lg:w-6/12 m-auto py-10">
