@@ -44,7 +44,6 @@ const jobSchema = Schema(
       required: true,
       default: "yearly",
       enum: ["onsite", "remote", "hybride", "negotiable"]
-      // enum: ["yearly", "monthly", "weekly", "negotiable", "never"]
     },
     salaryreview: {
       type: String,
@@ -128,11 +127,6 @@ const jobSchema = Schema(
       enum: ["fulltime", "parttime", "negotiable"]
     },
     skills:{
-      type: Array,
-      required: true,
-      default: [],
-    },
-    cetagory:{
       type: Array,
       required: true,
       default: [],
