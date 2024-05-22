@@ -94,23 +94,28 @@ export default function AddUserBox({ openCreateBox }) {
       </select>
     </div>
   );
-
   const renderJoditEditor = (label, name) => (
     <div className="w-12/12 mx-1">
       <label className="py-2 block text-lg text-yellow-200" htmlFor={name}>
         {label}
       </label>
       <JoditEditor
-        className="text-sm p-2 px-4 rounded-md block w-full border-0 bg-slate-950 text-white"
         value={jobInfo[name]}
         onChange={(content) => handleEditorChange(content, name)}
         tabIndex={1}
         config={{
-           readonly: false,
-          }}
+          readonly: false,
+          style: {
+            minHeight: '200px',
+            width: '100%',
+            backgroundColor: '#333', 
+            color: '#ddd', 
+          },
+        }}
       />
     </div>
   );
+  
 
   return (
     <div className="fixed top-0 lg:p-10 left-0 w-full h-screen overflow-y-auto bg-gradient-to-b from-slate-800">
