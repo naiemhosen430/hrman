@@ -17,7 +17,7 @@ export async function GET(request) {
 
 
     jobs = await Job.find().select(
-        -apllicatorids 
+        '-apllicatorids '
     )
 
 
