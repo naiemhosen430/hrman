@@ -70,9 +70,11 @@ export default function page() {
   return (
 <>
   <PageHeader />
-  <AddUserBox
-    openCreateBox={openCreateBox}
-  />
+  {createQuestionBox && 
+    <AddUserBox
+      openCreateBox={openCreateBox}
+    />
+  }
   <div className="p-4">
     <div className="lg:py-2 p-1 text-right">
       <button
