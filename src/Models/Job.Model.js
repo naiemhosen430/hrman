@@ -73,7 +73,7 @@ const jobSchema = Schema(
         validator: function(v) {
           return +v > +Date.now();
         },
-        message: props => `Deadline (${props.value}) cannot be use.!`
+        message: props => `Deadline (${props.value}) is less then todays date!.!`
       }
     },
     address:{
