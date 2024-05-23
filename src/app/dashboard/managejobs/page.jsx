@@ -7,6 +7,7 @@ import LilSpinner from '@/app/Components/Loaders/LilSpinner';
 import { JobContext } from '@/Contexts/JobContext';
 import { BsThreeDotsVertical } from "react-icons/bs";
 import Link from 'next/link';
+import UseProtectAdmin from '@/Hooks/UseProtectAdmin';
 
 
 export default function page() {
@@ -14,11 +15,17 @@ export default function page() {
   const [createQuestionBox, setCreateQuestionBox] = useState(false);
   const {state} = useContext(JobContext) 
   const alljobs = state.alljob
+  const userState = useContext(AuthContex);
+  const { user } = userState.state;
+  console.log(user)
 
   useEffect(()=>{
     getAllJobs()
   },[])
 
+  useEffect(() => {
+    UseProtectAdmin(user?.role)
+  },[])
 
 
   if (!alljobs) {

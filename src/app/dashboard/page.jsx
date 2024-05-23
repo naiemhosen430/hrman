@@ -1,14 +1,22 @@
-import React from "react";
-import PageHeader from "./Components/PageHeader";
+import React, { useContext } from "react";
+import AdminDashboard from "./Components/AdminDashboard";
+import { AuthContex } from "@/Contexts/AuthContex";
+import UserDashboard from "./Components/UserDashboard";
 
 export default function page() {
+  const { state } = useContext(AuthContex);
+  const { user } = state;
+
+  if (!user){
+    <h1 className="flex items-center justify-center h-screen">Loading....</h1>
+  }
+
+  if (user?.role === "admin"){
+    return <AdminDashboard />
+  }else{
+    return <UserDashboard />
+  }
   return <>
-  <PageHeader />
-    <div className="p-4">
-      <div>
-        <h1 className="text-xl font-bold">Dashboard Overview</h1>
-        <p className="text-lg">Get a comprehensive snapshot of your HR operations at aglance</p>
-      </div>
-    </div>
+
   </>;
 }

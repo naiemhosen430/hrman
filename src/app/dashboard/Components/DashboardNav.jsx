@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState, useContext } from "react";
-import { MdOpenInFull } from "react-icons/md";
 import { FaPlus } from "react-icons/fa6";
 import { menuItems } from "@/data";
 import { AuthContex } from "@/Contexts/AuthContex";
