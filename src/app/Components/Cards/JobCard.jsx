@@ -4,7 +4,7 @@ import React from 'react'
 export default function JobCard({data}) {
   return (
     <>
-        <div className="lg:p-4 p-2 min-h rounded-md border border-red-500">
+        <div className="lg:p-4 p-2 min-h-[300px] rounded-md border border-red-500">
             <div className="flex justify-between">
                 <div className="border inline-block p-2">
                 <img className="h-[50px] w-[50px] opacity-60" src={data?.companylogo} alt="" />
