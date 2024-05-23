@@ -21,9 +21,9 @@ export default function JobCard() {
                 <span className="rounded-md inline-block mr-2 p-1 px-2">Dhaka, Bangladesh</span>
             </div>
 
-            <span className="rounded-md inline-block mr-2 p-1 px-2">Type: Full time</span>
+            <span className="rounded-md text-xs inline-block mr-2 py-1">Type: Full time</span>
             
-            <span className="rounded-md inline-block mr-2 p-1 px-2">Selary: 10000/=</span>
+            <span className="rounded-md text-xs inline-block mr-2 py-1">Selary: 10000/=</span>
         </div>
     </>
   )
