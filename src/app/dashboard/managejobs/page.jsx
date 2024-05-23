@@ -12,6 +12,7 @@ import { AuthContex } from '@/Contexts/AuthContex';
 
 
 export default function page() {
+  const {protectAdmin} = UseProtectAdmin()
   const {getAllJobs,loading} = UseJobContext()
   const [createQuestionBox, setCreateQuestionBox] = useState(false);
   const {state} = useContext(JobContext) 
@@ -26,7 +27,7 @@ export default function page() {
   },[])
 
   useEffect(() => {
-    UseProtectAdmin(user?.role)
+    protectAdmin(user?.role)
   },[])
 
 
