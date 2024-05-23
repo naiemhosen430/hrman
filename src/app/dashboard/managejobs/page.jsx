@@ -17,7 +17,9 @@ export default function page() {
   const {state} = useContext(JobContext) 
   const alljobs = state.alljob
   const userState = useContext(AuthContex);
-  const { user } = userState.state;
+  console.log({userState})
+  // const { user } = userState.state;
+  const user = null
   console.log(user)
 
   useEffect(()=>{
