@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-export default function JobCard(data) {
+export default function JobCard({data}) {
   return (
     <>
         <div className="lg:p-4 p-2 rounded-md border border-red-500">

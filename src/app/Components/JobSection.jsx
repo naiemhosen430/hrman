@@ -25,7 +25,7 @@ export default function JobSection() {
                 {alljobs && alljobs.length > 0 ? (
                     alljobs.map((job, index) => (
                     <div key={index} className="lg:w-3/12 inline-block p-2 w-12/12">
-                        <JobCard job={job} />
+                        <JobCard data={job} />
                     </div>
                     ))
                 ) : (
