@@ -18,7 +18,7 @@ export default function JobSection() {
     <>
         <div>
             <div>
-                <h1 className="text-4xl font-bold text-center p-4">Our Open Position</h1>
+                <h1 className="text-4xl font-bold text-center p-4 py-20">Our Open Position</h1>
             </div>
 
             <div className=''>
