@@ -1,7 +1,19 @@
-import React from 'react'
+'use client'
+import React, { useContext, useEffect } from 'react'
 import JobCard from './Cards/JobCard'
+import { JobContext } from '@/Contexts/JobContext'
+import UseJobContext from '@/Hooks/UseJobContext'
 
 export default function JobSection() {
+    const {getAllJobs,loading} = UseJobContext()
+    const {state} = useContext(JobContext) 
+    const alljobs = state.alljob
+
+    
+  useEffect(()=>{
+    getAllJobs()
+  },[])
+
   return (
     <>
         <div>
@@ -10,10 +22,19 @@ export default function JobSection() {
             </div>
 
             <div>
-                <div className="lg:w-3/12 p-2 w-12/12">
-                    <JobCard />
-                </div>
+                {alljobs && alljobs.length > 0 ? (
+                    alljobs.map((job, index) => (
+                    <div key={index} className="lg:w-3/12 inline-block p-2 w-12/12">
+                        <JobCard job={job} />
+                    </div>
+                    ))
+                ) : (
+                    <div className="text-center text-gray-500 p-5">
+                    No jobs found.
+                    </div>
+                )}
             </div>
+
         </div>
     </>
   )
