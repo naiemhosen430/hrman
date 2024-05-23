@@ -1,3 +1,4 @@
+"use client"
 import React, { useContext } from "react";
 import AdminDashboard from "./Components/AdminDashboard";
 import { AuthContex } from "@/Contexts/AuthContex";
