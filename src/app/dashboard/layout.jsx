@@ -13,7 +13,7 @@ export default function DashboardLayout({ children }) {
     <div className="flex justify-center">
 
     <DashboardNav />
-    <div className="lg:w-10/12 h-screen overflow-hidden w-full">
+    <div className="lg:w-10/12 h-screen overflow-y-auto overflow-hidden w-full">
 
         {children}
     </div>

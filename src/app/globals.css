@@ -35,3 +35,12 @@
 .hover-item:hover > .action-popup{
   display: block;
 }
+
+/* foir hide scrollbar  */
+.custom-scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.custom-scrollbar-hidden {
+  scrollbar-width: none;
+}

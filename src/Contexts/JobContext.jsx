@@ -1,6 +1,5 @@
 'use client'
 const { createContext, useReducer } = require("react");
-
 export const JobContext = createContext()
 
 const jobReducer = (state, action) => {
@@ -15,7 +14,6 @@ const jobReducer = (state, action) => {
 }
 
 export const JobContextProvider = ({children}) => {
-
     const [state, dispatch] = useReducer(jobReducer, {
         alljob: null,
       });
@@ -25,5 +23,4 @@ return (
         {children}
     </JobContext.Provider>
 )
-
 }
