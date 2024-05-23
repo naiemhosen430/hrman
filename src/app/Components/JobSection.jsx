@@ -21,7 +21,7 @@ export default function JobSection() {
                 <h1 className="text-4xl font-bold text-center p-4">Our Open Position</h1>
             </div>
 
-            <div>
+            <div className=''>
                 {alljobs && alljobs.length > 0 ? (
                     alljobs.map((job, index) => (
                     <div key={index} className="lg:w-3/12 inline-block p-2 w-12/12">
