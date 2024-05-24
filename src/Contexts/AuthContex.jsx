@@ -25,10 +25,11 @@ export default function AuthContexProvider({ children }) {
   useEffect(() => {
 
     if (token) {
+      console.log(token)
     const fetchData = async () => {
       try {
         const response = await getApiCall("auth/me");
-        if (response?.statusCode === 200 && response?.data) {
+        if (response?.statusCode === 200 && response?.data && !state.user) {
           dispatch({ type: "ADD_AUTHDATA", payload: response?.data || null });
         }
       } catch (error) {
