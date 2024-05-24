@@ -10,6 +10,7 @@ export async function GET(request) {
     // checking authentication 
     const userInfo = await checkAuthorization(request)
 
+
     if (!userInfo || !userInfo?.id){
       console.log("returning from authoriz")
       return Response.json({ message:"unauthorized!" }, { status: 401 })
