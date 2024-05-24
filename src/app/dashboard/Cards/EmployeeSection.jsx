@@ -12,9 +12,9 @@ export default function EmployeeSection() {
 
                 <h1 classname="text-2xl py-5">New Employee</h1>
 
-                <div className="items-center">
-                  <h1 classname="text-5xl font-bol;d py-5">New Employee</h1>
-                  <h1 classname="text-xl bg-[#D9D9D9] px-4 rounded-full font-bol;d py-5"><GrLinkNext /> 0.0%</h1>
+                <div className="flex items-center">
+                  <h1 classname="text-4xl font-bold py-5">450</h1>
+                  <h1 classname="text-xl bg-[#D9D9D9] px-4 rounded-full flex items-center font-bold py-5"><GrLinkNext /> 0.0%</h1>
                 </div>
 
             </div>
