@@ -1,10 +1,10 @@
 import { toast } from "react-toastify";
-import { setCookie } from "cookies-next";
+import { deleteCookie } from "cookies-next";
 
 export const handleError = (error) => {
     if (error.response) {
         if (error?.response?.status === 401){
-            setCookie("accesstoken", "");
+            deleteCookie("accesstoken");
         }
         toast.error(`Server Error: ${error.response.data.message || 'An error occurred'}`);
     } else if (error.request) {
