@@ -4,7 +4,7 @@ import { setCookie } from "cookies-next";
 export const handleError = (error) => {
     if (error.response) {
         if (error?.response?.status === 401){
-            setCookie("accesstoken", null);
+            setCookie("accesstoken", "");
         }
         toast.error(`Server Error: ${error.response.data.message || 'An error occurred'}`);
     } else if (error.request) {
