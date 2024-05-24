@@ -11,7 +11,7 @@ export async function GET(request) {
     const userInfo = await checkAuthorization(request)
 
     let jobs 
-    if (!userInfo){
+    if (userInfo?.role === "admin"){
         jobs = await Job.find()
     }
 

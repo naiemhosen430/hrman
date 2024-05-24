@@ -10,9 +10,7 @@ const metadata = {
 
 export default function DashboardLayout({ children }) {
   const userState = useContext(AuthContex);
-  console.log({userState})
   const { user } = userState.state;
-  console.log(user)
 
   if (!user){
     return <h1 className="h-screen w-full flex items-center justify-center text-2xl font-bold">Loading....</h1>

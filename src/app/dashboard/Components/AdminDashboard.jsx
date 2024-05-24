@@ -1,5 +1,5 @@
 import React from 'react'
-import EmployeeSection from './EmployeeSection'
+import EmployeeSection from '../Cards/EmployeeSection'
 import PageHeader from './PageHeader'
 
 export default function AdminDashboard() {

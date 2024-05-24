@@ -15,6 +15,11 @@ export async function POST(NextRequest) {
       return Response.json({ message:"unauthorized!" }, { status: 401 })
     }
 
+
+    if (userInfo?.role !== "admin"){
+      return Response.json({ message:"You can't create a job!" }, { status: 401 })
+    }
+
     const preparedJobObj = {
         ...jobsData,
         creatorid: userInfo.id

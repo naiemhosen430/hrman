@@ -6,12 +6,13 @@ export const checkAuthorization = async (request) => {
         return Response.json({ message:"unauthorized!" }, { status: 401 })
     }
 
+    
     const accessToken = authHeader.split(" ")[1];
-
+    
     // Verify and decode the token
     let userInfo;
     try {
-        userInfo = jwt.verify(accessToken, process.env.TOKEN_SECRET);
+        userInfo = await jwt.verify(accessToken, process.env.TOKEN_SECRET);
     } catch (error) {
         return Response.json({ message:"unauthorized!" }, { status: 401 })
     }

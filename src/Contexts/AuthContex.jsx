@@ -28,8 +28,7 @@ export default function AuthContexProvider({ children }) {
     const fetchData = async () => {
       try {
         const response = await getApiCall("auth/me");
-
-        if (response?.statusCode === 200) {
+        if (response?.statusCode === 200 && response?.data) {
           dispatch({ type: "ADD_AUTHDATA", payload: response?.data || null });
         }
       } catch (error) {
